@@ -20,12 +20,12 @@ namespace ControlViewModelTestApp
 
     }
 
-    partial class CheckBoxTemplate
+    partial class CheckBoxTemplateBase
     {
         public static readonly DependencyProperty CommonStatesProperty =
-            DependencyProperty.Register("CommonStates", typeof(CommonStates), typeof(CheckBoxTemplate), new PropertyMetadata(ControlViewModelTestApp.CommonStates.Normal, OnPropertyChanged));
+            DependencyProperty.Register("CommonStates", typeof(CommonStates), typeof(CheckBoxTemplateBase), new PropertyMetadata(ControlViewModelTestApp.CommonStates.Normal, OnPropertyChanged));
 
         public static readonly DependencyProperty TemplateParentProperty =
-            DependencyProperty.Register("TemplateParent", typeof(CheckBox2), typeof(CheckBoxTemplate), new PropertyMetadata(null, OnPropertyChanged));
+            DependencyProperty.Register("TemplateParent", typeof(CheckBox2), typeof(CheckBoxTemplateBase), new PropertyMetadata(null, OnPropertyChanged));
     }
 }

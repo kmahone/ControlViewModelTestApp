@@ -85,12 +85,10 @@ namespace ControlViewModelTestApp
             if(IsChecked == true)
             {
                 IsChecked = false;
-                template.CheckStates = CheckStates.Unchecked;
             }
             else
             {
                 IsChecked = true;
-                template.CheckStates = CheckStates.Checked;
             }
         }
 
@@ -133,7 +131,35 @@ namespace ControlViewModelTestApp
 
         public static void OnPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-
+            (d as CheckBox2).OnPropertyChanged(e);
         }
+
+        public void OnPropertyChanged(DependencyPropertyChangedEventArgs e)
+        {
+            if(e.Property == ControlTemplate2Property)
+            {
+                var dt = e.NewValue as DataTemplate;
+                if (dt != null)
+                {
+                    var content = dt.LoadContent() as CheckBoxTemplateBase;
+                    if(content != null)
+                    {
+                        this.Content = content;
+                        content.TemplateParent = this;
+                    }
+                }
+            }
+        }
+
+        public DataTemplate ControlTemplate2
+        {
+            get { return (DataTemplate)GetValue(ControlTemplate2Property); }
+            set { SetValue(ControlTemplate2Property, value); }
+        }
+
+        public static readonly DependencyProperty ControlTemplate2Property =
+            DependencyProperty.Register("ControlTemplate2", typeof(DataTemplate), typeof(CheckBox2), new PropertyMetadata(null, OnPropertyChanged));
+
+
     }
 }

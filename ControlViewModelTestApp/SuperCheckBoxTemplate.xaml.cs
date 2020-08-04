@@ -13,14 +13,27 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
+// The User Control item template is documented at https://go.microsoft.com/fwlink/?LinkId=234236
+
 namespace ControlViewModelTestApp
 {
-    public sealed partial class CheckBoxTemplate : CheckBoxTemplateBase
+    public sealed partial class SuperCheckBoxTemplate : CheckBoxTemplateBase
     {
-        public CheckBoxTemplate()
+        public SuperCheckBoxTemplate()
         {
             this.InitializeComponent();
-            VSM2.Connect(this);
+        }
+
+        Symbol GetSymbolForCheckedValue(bool? b)
+        {
+            if (b == true)
+            {
+                return Symbol.Accept;
+            }
+            else
+            {
+                return Symbol.Cancel;
+            }
         }
     }
 }

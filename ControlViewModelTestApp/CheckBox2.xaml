@@ -13,4 +13,5 @@
     >
 
     <local:CheckBoxTemplate x:Name="template" />
+    <!--<local:SuperCheckBoxTemplate x:Name="template" />-->
 </UserControl>

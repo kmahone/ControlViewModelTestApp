@@ -1,4 +1,4 @@
-﻿<UserControl
+﻿<local:CheckBoxTemplateBase
     x:Class="ControlViewModelTestApp.CheckBoxTemplate"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -56,7 +56,6 @@
                   FontFamily="{ThemeResource SymbolThemeFontFamily}"
                   Glyph="&#xE001;"
                   FontSize="20"
-                  Foreground="{ThemeResource CheckBoxCheckGlyphForegroundUnchecked}"
                   Opacity="0" />
 
         </Grid>
@@ -69,4 +68,4 @@
                 AutomationProperties.AccessibilityView="Raw"
                 TextWrapping="Wrap" />
     </Grid>
-</UserControl>
+</local:CheckBoxTemplateBase>

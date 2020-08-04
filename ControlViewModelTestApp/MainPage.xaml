@@ -9,6 +9,18 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <local:CheckBox2 Content2="CheckBox2" Background="LightBlue" Padding="12" />
+        <StackPanel>
+            <local:CheckBox2 Content2="CheckBox2" Background="LightBlue" Padding="12" />
+
+            <local:CheckBox2 Content2="CheckBox2" >
+                <local:CheckBox2.ControlTemplate2>
+                    <DataTemplate>
+                        <local:SuperCheckBoxTemplate />
+                    </DataTemplate>
+                </local:CheckBox2.ControlTemplate2>
+            </local:CheckBox2>
+
+        </StackPanel>
+        
     </Grid>
 </Page>
